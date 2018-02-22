@@ -1,0 +1,45 @@
+body {
+  background-color: #55ACEE;
+  color: #fff;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  margin: 75px 0 100px 0;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Indie Flower', cursive;
+}
+
+h2:empty::after,
+h3:empty::after {
+  content: "zzzzzzz";
+  visibility: hidden;
+}
+
+h3 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 75px;
+}
+
+.trigger,
+.tweet {
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
+  display: block;
+  width: 300px;
+  margin: 30px auto;
+  padding: 10px 0;
+  background-color: inherit;
+  outline: 1px solid #fff;
+  border: 0;
+  color: white;
+  cursor: pointer;
+}
