@@ -10,22 +10,25 @@ function getQuote() {
 function createTweet(input) {
     var data = input[0];
     //console.log(data);
-    var quoteText = $(data.content).text().trim();
-    var quoteAuthor = data.title;
-    var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
+    if (data) {
+      var quoteText = $(data.content).text().trim();
+      var quoteAuthor = data.title;
+      var tweetText = "Quote of the day - " + quoteText + " Author: " + quoteAuthor;
 
-    if (!quoteAuthor.length) {
-        quoteAuthor = "Unknown author";
-    }
-
-    if (tweetText.length > 140) {
-    getQuote();
-    } else {
-        var tweet = tweetLink + encodeURIComponent(tweetText);
-        $('.quote').text(quoteText);
-        $('.author').text("Author: " + quoteAuthor);
-        $('.tweet').attr('href', tweet);
+      if (!quoteAuthor.length) {
+          quoteAuthor = "Unknown author";
       }
+
+      if (tweetText.length > 140) {
+      getQuote();
+      } else {
+          var tweet = tweetLink + encodeURIComponent(tweetText);
+          $('.quote').text(quoteText);
+          $('.author').text("Author: " + quoteAuthor);
+          $('.tweet').attr('href', tweet);
+        }
+    }
+    return false;
 }
 
 $(document).ready(function() {
